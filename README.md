@@ -1,161 +1,152 @@
 # ResumeDiff
 
-ResumeDiff is a resume version intelligence tool that helps job seekers understand exactly what changed between two versions of their resume.
+Compare two versions of a resume and instantly identify added skills, removed skills, and ATS-related changes.
 
-Instead of manually comparing documents line by line, ResumeDiff analyzes both versions and generates a detailed report showing improvements, missing keywords, ATS impact, readability changes, and skill differences.
+## Overview
 
----
+ResumeDiff is a web application that helps job seekers track how their resumes evolve over time. Instead of manually comparing documents line by line, users can upload an old resume and a new resume to receive a detailed comparison report.
 
-## Problem
+The application analyzes both resumes and highlights:
 
-Most candidates continuously update their resumes but have no way to measure whether those changes actually improve their chances of getting interviews.
+* Added skills
+* Removed skills
+* Common skills
+* ATS-related differences
+* Resume improvement insights
 
-ResumeDiff solves this by providing a clear comparison between an old resume and a new resume.
-
----
+This makes it easier to optimize resumes before applying for jobs and understand exactly what has changed between versions.
 
 ## Features
 
-* Compare two resume versions instantly
-* ATS score comparison
-* Added and removed skills detection
-* Keyword intelligence and missing keyword analysis
-* Readability comparison
-* Section-by-section change tracking
-* Resume improvement suggestions
-* PDF, DOCX, and TXT support
-* Fully responsive interface
-* Privacy-first processing
-
----
-
-## How It Works
-
-### 1. Upload Two Resumes
-
-Upload your old resume and your latest version.
-
-### 2. Analysis Engine
-
-ResumeDiff extracts text and analyzes:
-
-* Skills
-* Keywords
-* Resume structure
-* Readability
-* ATS signals
-
-### 3. Generate Report
-
-Receive a detailed comparison showing:
-
-* What improved
-* What was removed
-* ATS score changes
-* Missing keywords
-* Actionable recommendations
-
----
+* Upload two resume PDFs
+* Automatic skill extraction
+* Added skills detection
+* Removed skills detection
+* Shared skills analysis
+* ATS-focused comparison
+* Responsive user interface
+* Fast comparison results
 
 ## Tech Stack
 
 ### Frontend
 
 * React
-* React Router
-* Tailwind CSS
-* Framer Motion
 * Vite
+* Tailwind CSS
 
 ### Backend
 
 * Node.js
 * Express.js
 
-### Analysis
+### File Processing
 
-* Resume parsing
-* Keyword extraction
-* ATS scoring heuristics
-* Text comparison engine
+* Multer
+* PDF Parsing
 
----
+## How It Works
+
+1. Upload an old resume.
+2. Upload a new resume.
+3. The system extracts skills from both documents.
+4. ResumeDiff compares the extracted data.
+5. A detailed comparison report is generated.
 
 ## Screenshots
 
-### Landing Page
+### Dashboard
 
-![Landing Page](landing.png)
+![Dashboard](screenshots/dashboard.jpg)
 
-### Comparison Upload Page
+### Features
 
-![comparison](compare.png)
+![Features](./screenshots/features.jpg)
 
+### Upload Process
 
-## Installation
+![Upload](./screenshots/uploading.jpg)
 
-Clone the repository:
+### Results
+
+![Results](./screenshots/result.jpg)
+
+## Local Setup
+
+### Clone Repository
 
 ```bash
 git clone https://github.com/manashwebdev/ResumeDiff.git
+cd ResumeDiff
 ```
 
-Install dependencies:
+### Backend Setup
 
 ```bash
+cd backend
 npm install
+npm start
 ```
 
-Start development server:
+Server runs on:
 
 ```bash
+http://localhost:5050
+```
+
+### Frontend Setup
+
+```bash
+cd frontend
+npm install
 npm run dev
 ```
 
----
+Frontend runs on:
 
-## Project Structure
-
-```text
-src
-├── components
-├── pages
-├── lib
-├── assets
-├── styles
-└── App.jsx
+```bash
+http://localhost:5173
 ```
 
----
+## API Endpoint
 
-## Why ResumeDiff?
+### Compare Resumes
 
-Resume builders help create resumes.
+```http
+POST /api/compare
+```
 
-ResumeDiff helps improve them.
+Uploads:
 
-By focusing on version-to-version analysis, ResumeDiff provides visibility into what actually changed and whether those changes strengthen the resume.
+* oldResume
+* newResume
 
----
+Returns:
+
+* Added skills
+* Removed skills
+* Common skills
+* Comparison summary
+
+## Live Demo
+
+Frontend:
+https://resume-diff-azure.vercel.app
+
+Backend:
+https://resumediff-backend.onrender.com
 
 ## Future Improvements
 
-* Job description matching
-* Industry-specific ATS scoring
-* Resume history tracking
-* Exportable PDF reports
-* AI-powered optimization suggestions
-
----
+* AI-powered resume suggestions
+* Skill categorization
+* Resume scoring
+* Downloadable reports
+* Multiple resume version tracking
 
 ## Author
 
-Manash Khati
+**Manash Khati**
 
-GitHub: https://github.com/manashwebdev
-
----
-
-## License
-
-MIT License
+* GitHub: https://github.com/manashwebdev
+* LinkedIn: Add your LinkedIn profile link
